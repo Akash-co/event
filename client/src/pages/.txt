@@ -1,0 +1,55 @@
+  <div className="d-flex align-items-stretch gap-0 flex-wrap" style={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
+              {/* Date Box */}
+              <div 
+                style={{ 
+                  width: '100px', 
+                  minWidth: '100px', 
+                  backgroundColor: 'rgba(0, 123, 255, 1)', 
+                  height: '250px', // Ensure consistent height
+                }} 
+                className="text-center p-3 rounded shadow-sm d-flex flex-column justify-content-center align-items-center"
+              >
+                <p className='text-light fw-bolder'>Date Available</p>
+                <p className="text-light fw-bolder mb-1" style={{ fontSize: '0.8rem' }}>{eventDetails?.date}</p>
+              </div>
+
+              {/* Event Details */}
+              <div 
+                style={{ 
+                  flex: '1', 
+                  minWidth: '450px', 
+                  maxWidth: '600px', 
+                  backgroundColor: 'rgba(150, 184, 250, 1)', 
+                  height: '250px', // Same height as Date Box
+                }} 
+                className="p-3 text-light text-shadow fw-bolder rounded shadow-sm d-flex flex-column justify-content-center"
+              >
+                <h5 className="fw-bolder mb-3">{eventDetails?.eventName}</h5>
+                <div className='d-flex justify-content-between'>
+                  <p className="mb-2">
+                    <i className="fa-solid fa-ticket me-2"></i> 
+                    <strong>Status:</strong> {eventDetails?.status}
+                  </p>
+                  <p>Event Type : {eventDetails?.eventType} </p>
+                </div>
+                <p className="mb-2">
+                  <i className="fa-solid fa-sack-dollar me-2"></i> 
+                  <strong>Price:</strong> ${eventDetails?.price}
+                </p>
+                <p className="mb-2">
+                  <i className="fa-solid fa-calendar-days me-2"></i> 
+                  <strong>Date :</strong> {eventDetails?.date}
+                </p>
+                <p className="mb-2">
+                  <i className="fa-solid fa-chair me-2"></i> 
+                  <strong>Seats:</strong> {seatsAvailableMessage}
+                </p>
+                <p className="mb-0">
+                  <i className="fa-solid fa-location-dot me-2"></i> 
+                  <strong>Location:</strong> {eventDetails?.location}
+                </p>
+                <Link to={'/bookings'}>
+                  <button className="mt-3 btn btn-primary">Add To Bookings</button>
+                </Link>
+              </div>
+            </div>
