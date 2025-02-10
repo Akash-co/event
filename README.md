@@ -1,4 +1,4 @@
-# event
+
 # Project Setup
 
 ## Prerequisites
